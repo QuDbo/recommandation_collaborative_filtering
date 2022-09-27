@@ -1,0 +1,60 @@
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "get"
+      ],
+      "route": "cf/user/{u_id:int}/article/{art_id:int}"
+    },
+    {
+      "name": "modelimplicitpart1",
+      "type": "blob",
+      "dataType": "binary",
+      "path": "azurefunction/model_implicit_CF_part_1",
+      "connection": "MyStorageConnectionAppSetting",
+      "direction": "in"
+    },
+    {
+      "name": "modelimplicitpart2",
+      "type": "blob",
+      "dataType": "binary",
+      "path": "azurefunction/model_implicit_CF_part_2",
+      "connection": "MyStorageConnectionAppSetting",
+      "direction": "in"
+    },
+    {
+      "name": "modelimplicitpart3",
+      "type": "blob",
+      "dataType": "binary",
+      "path": "azurefunction/model_implicit_CF_part_3",
+      "connection": "MyStorageConnectionAppSetting",
+      "direction": "in"
+    },
+    {
+      "name": "useritemsparse",
+      "type": "blob",
+      "dataType": "binary",
+      "path": "azurefunction/user_item_sparse.npz",
+      "connection": "MyStorageConnectionAppSetting",
+      "direction": "in"
+    },
+    {
+      "name": "corrarticle",
+      "type": "blob",
+      "dataType": "binary",
+      "path": "azurefunction/corr_article.csv",
+      "connection": "MyStorageConnectionAppSetting",
+      "direction": "in"
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "$return"
+    }
+  ]
+}
